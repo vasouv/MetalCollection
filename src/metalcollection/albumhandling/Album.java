@@ -18,6 +18,8 @@ public class Album implements Serializable {
     private int release;
     private String genre;
     
+    public Album(){}
+    
     public Album(int id, String band, String title, int release, String genre) {
         this.id = id;
         this.band = band;
