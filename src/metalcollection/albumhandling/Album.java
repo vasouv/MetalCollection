@@ -1,7 +1,6 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * This work is licensed under a 
+ * Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License
  */
 
 package metalcollection.albumhandling;
