@@ -8,20 +8,20 @@
 
 <AnchorPane id="AnchorPane" layoutX="0.0" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="metalcollection.MetalCollectionViewerController">
   <children>
-    <TableView prefHeight="350.0" prefWidth="600.0" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+    <TableView fx:id="table" prefHeight="350.0" prefWidth="600.0" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
       <columns>
-        <TableColumn prefWidth="50.0" text="ID" />
-        <TableColumn prefWidth="150.0" text="BAND" />
-        <TableColumn prefWidth="200.0" text="TITLE" />
-        <TableColumn prefWidth="100.0" text="RELEASE" />
-        <TableColumn prefWidth="100.0" text="GENRE" />
+        <TableColumn prefWidth="50.0" text="ID" fx:id="id" />
+        <TableColumn prefWidth="150.0" text="BAND" fx:id="band" />
+        <TableColumn prefWidth="200.0" text="TITLE" fx:id="title" />
+        <TableColumn prefWidth="100.0" text="RELEASE" fx:id="release" />
+        <TableColumn prefWidth="100.0" text="GENRE" fx:id="genre" />
       </columns>
     </TableView>
     <HBox alignment="CENTER" layoutX="0.0" prefHeight="50.0" prefWidth="600.0" spacing="10.0" AnchorPane.bottomAnchor="0.0">
       <children>
-        <Button mnemonicParsing="false" text="Add" HBox.hgrow="NEVER" />
-        <Button mnemonicParsing="false" text="Delete" HBox.hgrow="NEVER" />
-        <Button mnemonicParsing="false" text="Refresh" HBox.hgrow="NEVER" />
+        <Button fx:id="btnAdd" mnemonicParsing="false" text="Add" HBox.hgrow="NEVER" />
+        <Button fx:id="btnDelete" mnemonicParsing="false" text="Delete" HBox.hgrow="NEVER" />
+        <Button fx:id="btnRefresh" mnemonicParsing="false" onAction="#refresh" text="Refresh" HBox.hgrow="NEVER" />
       </children>
     </HBox>
   </children>

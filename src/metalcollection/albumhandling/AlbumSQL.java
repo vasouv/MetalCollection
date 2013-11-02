@@ -25,7 +25,7 @@ public class AlbumSQL {
     private void connected() {
         try {
             Class.forName("org.sqlite.JDBC");
-            connection = DriverManager.getConnection("jdbc:sqlite:albums.db");
+            connection = DriverManager.getConnection("jdbc:sqlite:albums");
             statement = connection.createStatement();
         }
         catch (ClassNotFoundException | SQLException e) {
