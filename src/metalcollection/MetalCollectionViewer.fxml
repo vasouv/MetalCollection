@@ -6,9 +6,23 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="200" prefWidth="320" xmlns:fx="http://javafx.com/fxml" fx:controller="metalcollection.MetalCollectionViewerController">
-    <children>
-        <Button layoutX="126" layoutY="90" text="Click Me!" onAction="#handleButtonAction" fx:id="button" />
-        <Label layoutX="126" layoutY="120" minHeight="16" minWidth="69" fx:id="label" />
-    </children>
+<AnchorPane id="AnchorPane" layoutX="0.0" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="metalcollection.MetalCollectionViewerController">
+  <children>
+    <TableView prefHeight="350.0" prefWidth="600.0" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <columns>
+        <TableColumn prefWidth="50.0" text="ID" />
+        <TableColumn prefWidth="150.0" text="BAND" />
+        <TableColumn prefWidth="200.0" text="TITLE" />
+        <TableColumn prefWidth="100.0" text="RELEASE" />
+        <TableColumn prefWidth="100.0" text="GENRE" />
+      </columns>
+    </TableView>
+    <HBox alignment="CENTER" layoutX="0.0" prefHeight="50.0" prefWidth="600.0" spacing="10.0" AnchorPane.bottomAnchor="0.0">
+      <children>
+        <Button mnemonicParsing="false" text="Add" HBox.hgrow="NEVER" />
+        <Button mnemonicParsing="false" text="Delete" HBox.hgrow="NEVER" />
+        <Button mnemonicParsing="false" text="Refresh" HBox.hgrow="NEVER" />
+      </children>
+    </HBox>
+  </children>
 </AnchorPane>
