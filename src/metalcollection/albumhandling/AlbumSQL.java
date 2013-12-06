@@ -43,6 +43,33 @@ public class AlbumSQL {
         }
     }
     
+    public void insertAlbum(Album album) {
+        try {
+            connected();
+            String insertSQL = "insert into collection values(" + album.getId() + ",'" + album.getBand() + "','" + album.getTitle() + "'," + album.getRelease() + ",'" + album.getGenre() + "')";
+            statement.executeUpdate(insertSQL);
+        }
+        catch (SQLException e) {
+            System.err.println(e.getMessage());
+        }
+        finally {
+            closed();
+        }
+    }
+    
+    public void deleteAlbum(int id) {
+        try {
+            connected();
+            statement.executeUpdate("delete from collection where id=" + id);
+        } 
+        catch (SQLException ex) {
+            System.err.println(ex.getMessage());
+        }
+        finally {
+            closed();
+        }
+    }
+    
     public ObservableList<Album> listAlbum() {
         try {
             connected();
