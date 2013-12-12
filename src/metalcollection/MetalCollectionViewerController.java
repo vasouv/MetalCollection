@@ -5,6 +5,7 @@
 
 package metalcollection;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
@@ -16,8 +17,10 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 import metalcollection.albumhandling.Album;
 import metalcollection.albumhandling.AlbumSQL;
+import metalcollection.insertalbum.*;
 
 /**
  *
@@ -41,6 +44,11 @@ public class MetalCollectionViewerController implements Initializable {
     
     @FXML
     public Button btnAdd, btnDelete, btnRefresh;
+    
+    @FXML
+    private void insert(ActionEvent e) throws IOException {
+        new InsertAlbumMain().start(new Stage());
+    }
     
     @FXML
     private void refresh(ActionEvent e){

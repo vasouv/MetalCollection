@@ -19,7 +19,7 @@
     </TableView>
     <HBox alignment="CENTER" layoutX="0.0" prefHeight="50.0" prefWidth="600.0" spacing="10.0" AnchorPane.bottomAnchor="0.0">
       <children>
-        <Button fx:id="btnAdd" mnemonicParsing="false" text="Add" HBox.hgrow="NEVER" />
+        <Button fx:id="btnAdd" mnemonicParsing="false" onAction="#insert" text="Add" HBox.hgrow="NEVER" />
         <Button fx:id="btnDelete" mnemonicParsing="false" text="Delete" HBox.hgrow="NEVER" />
         <Button fx:id="btnRefresh" mnemonicParsing="false" onAction="#refresh" text="Refresh" HBox.hgrow="NEVER" />
       </children>

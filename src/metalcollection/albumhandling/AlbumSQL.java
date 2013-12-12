@@ -25,7 +25,7 @@ public class AlbumSQL {
     private void connected() {
         try {
             Class.forName("org.sqlite.JDBC");
-            connection = DriverManager.getConnection("jdbc:sqlite:albums");
+            connection = DriverManager.getConnection("jdbc:sqlite:metalalbums.sqlite");
             statement = connection.createStatement();
         }
         catch (ClassNotFoundException | SQLException e) {
@@ -48,6 +48,7 @@ public class AlbumSQL {
             connected();
             String insertSQL = "insert into collection values(" + album.getId() + ",'" + album.getBand() + "','" + album.getTitle() + "'," + album.getRelease() + ",'" + album.getGenre() + "')";
             statement.executeUpdate(insertSQL);
+            System.out.println("Album added");
         }
         catch (SQLException e) {
             System.err.println(e.getMessage());
@@ -70,6 +71,28 @@ public class AlbumSQL {
         }
     }
     
+    /*
+    * This method retrieves the largest ID value of the table, which is used
+    * as the ID of the next album to be inserted.
+    */
+    public int getMaxId() throws SQLException {
+        connected();
+        
+        int maxId = 0;
+        
+        ResultSet max = statement.executeQuery("select max(id) from collection");
+        
+        max.next();
+        
+        maxId = max.getInt(1);
+        
+        max.close();
+        
+        closed();
+        
+        return maxId + 1;
+    }
+    
     public ObservableList<Album> listAlbum() {
         try {
             connected();
@@ -82,7 +105,7 @@ public class AlbumSQL {
                 album.setId(show.getInt(1));
                 album.setBand(show.getString(2));
                 album.setTitle(show.getString(3));
-                album.setRelease(show.getInt(4));
+                album.setRelease(show.getString(4));
                 album.setGenre(show.getString(5));
                 
                 list.add(album);

@@ -15,12 +15,12 @@ public class Album implements Serializable {
     private int id;
     private String band;
     private String title;
-    private int release;
+    private String release;
     private String genre;
     
     public Album(){}
     
-    public Album(int id, String band, String title, int release, String genre) {
+    public Album(int id, String band, String title, String release, String genre) {
         this.id = id;
         this.band = band;
         this.title = title;
@@ -52,11 +52,11 @@ public class Album implements Serializable {
         this.title = title;
     }
 
-    public int getRelease() {
+    public String getRelease() {
         return release;
     }
 
-    public void setRelease(int release) {
+    public void setRelease(String release) {
         this.release = release;
     }
 
